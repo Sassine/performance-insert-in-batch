@@ -62,7 +62,6 @@ public class PerformanceInsertInit {
 			repository.saveAll(productsAdd);
 		}
 		
-		repository.saveAll(products);
 		log.info("Finished batch inserting {} objects in data base in: {} seconds", totalObjects,Duration.between(start, Instant.now()).toSeconds());
 		
 		
