@@ -1,13 +1,19 @@
 package dev.sassine.perfomance.insert.model;
 
+import java.util.UUID;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Type;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import static javax.persistence.GenerationType.SEQUENCE;
-
-import javax.persistence.*;
 
 @Entity
 @AllArgsConstructor
@@ -16,10 +22,13 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class Product {
 
-    @Id
-    @GeneratedValue(strategy = SEQUENCE, generator = "seqProduct")
-    @SequenceGenerator(name = "seqProduct", sequenceName = "seqProductGen", initialValue = 1)
-    private Long id;
+	@Id
+    @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "uuid2")
+    @Column(name = "id", updatable = false, nullable = false, columnDefinition = "VARCHAR(36)")
+    @Type(type = "uuid-char")
+    private UUID id;
+	
     private String name;
 
 }
