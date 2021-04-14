@@ -1,4 +1,4 @@
-# Spring Boot: Aumente o desempenho de inserção em lote 100x 🔥
+# Spring Boot: Aumente o desempenho de inserção no JPA em 100x 🔥
 
 Neste projeto mostro como reduzir o tempo de um insert de 10k de registros com alguns ajustes simples no projeto 
 resultando em uma execução de 122 segundos para 3 segundos 
